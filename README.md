@@ -2,10 +2,10 @@
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
-##
-Can run in Surge:
+## See in web
+[link here](jason_rental.surge.sh)
 
-`jason_rental.surge.sh`
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
