@@ -2,7 +2,10 @@
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
+##
+Can run in Surge:
 
+`jason_rental.surge.sh`
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
@@ -18,6 +21,41 @@ You will need the following things properly installed on your computer.
 * `cd super-rentals`
 * `npm install`
 
+## Addons
+[Check All Addons Here](https://emberobserver.com/)
+* `ember install ember-cli-mirage`
+> This is to mimic API interaction. 
+It proxy HTTP request and return mock HTTP reponse, The data and endpoints 
+will be setup here. 
+```
+Example: 
+  In Mirage config.js:
+  export default function() {
+    this.namespace = '/api';
+    this.get('/test', function() {
+      return {
+         data: [{
+          id: 1
+          type: test
+        }]
+      }
+    }
+  }
+    
+  In Adapter:
+  export default DS.JSONAPIAdapter.extend({
+    namespace: 'api'
+  });
+  
+  In Model:
+  export default Route.extend({
+    model() {
+      return this.get('store').findAll('rental');
+    }
+  });
+```
+[Check tutorial here](https://guides.emberjs.com/v3.1.0/tutorial/installing-addons/)
+ 
 ## Running / Development
 
 * `ember serve`
